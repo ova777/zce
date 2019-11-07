@@ -9,7 +9,13 @@ ng serve
 npm outdated
 npm update
 
-ng test --code-coverage --no-watch
+ng test #code-coverage #no-watch
+```
+
+## material
+```apacheconfig
+ng add @angular/material
+npm i --save @angular/flex-layout 
 ```
 
 ## ng

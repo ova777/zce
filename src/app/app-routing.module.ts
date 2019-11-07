@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { PageNotFoundComponent } from './shared';
 import { PreloadSelectedModuleStrategy } from './preload-selected-module-strategy';
@@ -15,13 +15,23 @@ const routes: Routes = [
   {path: '**', redirectTo: '/page-not-found'},
 ];
 
+
+
 @NgModule({
+  // useHash supports github.io demo page, remove in your app
   imports: [
     RouterModule.forRoot(routes, {
-      // implement a custom preloading strategy for just some of the modules (PRs welcome 😉)
-      preloadingStrategy: PreloadSelectedModuleStrategy
+      useHash: true,
+      scrollPositionRestoration: 'enabled',
+      preloadingStrategy: PreloadAllModules
     })
   ],
+  // imports: [
+  //   RouterModule.forRoot(routes, {
+  //     // implement a custom preloading strategy for just some of the modules (PRs welcome 😉)
+  //     preloadingStrategy: PreloadSelectedModuleStrategy
+  //   })
+  // ],
   exports: [
     RouterModule
   ],

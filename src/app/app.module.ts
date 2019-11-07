@@ -14,6 +14,8 @@ import { CoreModule, Logger } from '@app/core';
 import { environment } from '@env/environment';
 import { ROUND_PROGRESS_DEFAULTS, RoundProgressModule } from 'angular-svg-round-progressbar';
 import { PhpQuestionService } from '@app/core/services/firestore/php-question.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 const log = new Logger('AppModule');
 
@@ -58,6 +60,7 @@ export function initApp(phpQuestionService: PhpQuestionService) {
       progressBar: true,
       maxOpened: 1
     }),
+    FlexLayoutModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
   providers: [

@@ -11,7 +11,8 @@ import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
   public title = 'ZCE';
@@ -63,7 +64,7 @@ export class AppComponent implements OnInit, OnDestroy {
         } else {
           window.document.activeElement.scrollTop = 0;
         }
-        this.headerComponent.sidebarClose();
+        // this.headerComponent.sidebarClose();
         this.syncLocationService.setValue(this.getCurrentUrl());
       }));
 

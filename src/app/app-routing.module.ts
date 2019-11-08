@@ -36,7 +36,7 @@ const routes: Routes = [
     RouterModule
   ],
   providers: [
-    PreloadSelectedModuleStrategy
+    // PreloadSelectedModuleStrategy
   ]
 })
 export class AppRoutingModule {
